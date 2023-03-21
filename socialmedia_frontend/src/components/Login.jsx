@@ -22,6 +22,7 @@ const Login = () => {
       localStorage.setItem("user", JSON.stringify(userInfo.data));
       const { name, sub, picture } = userInfo.data;
 
+      console.log(picture);
       const doc = {
         _id: sub,
         _type: "user",
@@ -55,7 +56,7 @@ const Login = () => {
           <div className="shadow-2xl">
             <button
               type="button"
-              className="bg-mainColor flex justify-center items-center p-3 rounded-lg cursor-pointer otline-none"
+              className="bg-mainColor flex justify-center items-center p-3 rounded-lg cursor-pointer outline-none"
               onClick={() => login()}
             >
               <FcGoogle className="mr-4" />
