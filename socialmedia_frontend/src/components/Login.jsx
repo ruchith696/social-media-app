@@ -18,11 +18,11 @@ const Login = () => {
         "https://www.googleapis.com/oauth2/v3/userinfo",
         { headers: { Authorization: `Bearer ${tokenResponse.access_token}` } }
       );
-
+      userInfo.data.googleId = userInfo.data.sub;
       localStorage.setItem("user", JSON.stringify(userInfo.data));
+      console.log(userInfo.data);
       const { name, sub, picture } = userInfo.data;
 
-      console.log(picture);
       const doc = {
         _id: sub,
         _type: "user",

@@ -18,7 +18,7 @@ const Home = () => {
   const userInfo = fetchUser();
 
   useEffect(() => {
-    const query = userQuery(JSON.parse(userInfo)?.sub);
+    const query = userQuery(userInfo?.sub);
     client.fetch(query).then((data) => {
       setUser(data[0]);
     });
