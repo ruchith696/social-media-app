@@ -13,10 +13,6 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
 
   const navigate = useNavigate();
   const user = fetchUser();
-  console.log(typeof user);
-
-  console.log(user.googleId);
-  console.log(postedBy._id);
 
   const alreadySaved = !!save?.filter(
     (item) => item.postedBy?._id === user.googleId
@@ -99,7 +95,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                 </button>
               )}
             </div>
-            <div className="flex justify-between items-center gap-e w-full">
+            <div className="flex justify-between items-center gap-2 w-full">
               {destination && (
                 <a
                   href={destination}
