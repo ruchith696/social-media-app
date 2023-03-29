@@ -103,7 +103,7 @@ const CreatePin = ({ user }) => {
                     <p className="text-lg"> Click to upload</p>
                   </div>
                   <p className="mt-32 text-gray-400">
-                    use high-quality JPG,SCG,PNG,GIF OR TIF less than 20MB
+                    use high-quality JPG,SVG,PNG,GIF OR TIF less than 20MB
                   </p>
                 </div>
                 <input
@@ -176,7 +176,7 @@ const CreatePin = ({ user }) => {
 
                 {categories.map((category) => (
                   <option
-                    className="text-base brder-0 outline-none capitalize bg-white text-black"
+                    className="text-base border-0 outline-none capitalize bg-white text-black"
                     value={category.name}
                   >
                     {category.name}
