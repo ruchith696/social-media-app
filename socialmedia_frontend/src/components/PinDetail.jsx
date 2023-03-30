@@ -15,6 +15,7 @@ const PinDetail = ({ user }) => {
   const [addingComment, setAddingComment] = useState(false);
 
   const { pinId } = useParams();
+
   const addComment = () => {
     setAddingComment(true);
     client
@@ -62,10 +63,10 @@ const PinDetail = ({ user }) => {
   return (
     <>
       <div
-        className="flex xl-flex-row flex-col m-auto bg-white"
+        className="flex xl:flex-row flex-col m-auto bg-white"
         style={{ maxWidth: "1500px", borderRadius: "32px" }}
       >
-        <div className="flex justify-center items-center md:items-start flex-initial ">
+        <div className="flex justify-center items-center md:items-start flex-initial">
           <img
             src={pinDetail?.image && urlFor(pinDetail.image).url()}
             className="rounded-t-3xl rounded-b-lg "
@@ -88,7 +89,7 @@ const PinDetail = ({ user }) => {
             </a>
           </div>
           <div>
-            <h1 className="text-4xl font-bold break-words mt-3 ">
+            <h1 className="text-3xl font-bold break-words mt-3 ">
               {pinDetail.title}
             </h1>
             <p className="mt-3">{pinDetail.about}</p>
@@ -113,7 +114,7 @@ const PinDetail = ({ user }) => {
                 <img
                   src={comment.postedBy.image}
                   alt="user-profile"
-                  className="w-10 h-10 rounded-full cursor"
+                  className="w-10 h-10 rounded-full cursor-pointer"
                 />
                 <div className="flex flex-col">
                   <p className="font-bold">{comment.postedBy.userName}</p>
@@ -123,7 +124,10 @@ const PinDetail = ({ user }) => {
             ))}
           </div>
           <div className="flex flex-wrap mt-6 gap-3">
-            <Link to={`user-profile/${pinDetail.postedBy?._id}`}>
+            <Link
+              to={`user-profile/${pinDetail.postedBy?._id}`}
+              className="flex items-center"
+            >
               <img
                 className="w-8 h-8 rounded-full cursor-pointer"
                 src={pinDetail.postedBy?.image}
